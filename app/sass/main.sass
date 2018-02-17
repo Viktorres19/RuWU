@@ -12,30 +12,96 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
+
+.h1, .h2, .h3, .h4, .h5
+	font-weight: bold
+	text-transform: uppercase
+	color: #fff
+.h1
+	font-size: 42px
+.h2
+	font-size: 30px
+.h3
+	font-size: 26px
+.h4
+	font-size: 22px
+.h5
+	font-size: 18px	
+
+.section-light
+	background-color: $back
+.section-head
+	margin: 40px 0
+	text-align: center
+	.h3
+		color: $purple
+		
+	p
+		text-align: center
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: #fff
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: #fff
 
 html, body
 	height: 100%
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $green
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($green, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($green, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($green, 5%)
+		&::after
+			opacity: .32
 
 body
 	font-size: 16px
@@ -50,12 +116,13 @@ body
 		.site-header
 			min-height: 700px
 			height: 100vh
-			background-color: $blue
+			background-color: $back
 			.top-line
 				position: fixed
-				background-color: rgba($back, .92)
+				background-color: rgba($light, .70)
 				width: 100%
 				z-index: 2
+				height: 60px	
 
 .section-overlay
 	&::before
@@ -65,8 +132,8 @@ body
 		left: 0
 		width: 100%
 		height: 100%
-		background-color: $blue
-		opacity: .92
+		background-color: $purple
+		opacity: .85
 	> *
 		position: relative
 
@@ -76,34 +143,617 @@ section, header
 	background-position: center
 
 section
-	background-color: #fff
+	background-color: $back
 
-.top-line
-	height: 60px
-	font-family: "raleway", sans-serif
-	font-weight: 800
-	color: darken($blue, 10%)
-.main-menu
-	&-left, &-right
-		display: flex
-		align-items: center		
+.points-wrapper
+	margin: 0
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	li
 		list-style-type: none
-	&-left		
-		flex-direction: row
-		justify-content: flex-end
-		li	
-			margin-left: 20px
-	&-center
-		text-align: center
-		.logo-header
-			height: 50px
-			width: auto	
+		margin: 0 15px
+		a
+			font-family: "raleway", sans-serif
+			font-weight: 800
+			display: block
+			color: darken($blue, 20%)
+			text-decoration: none		
+			.img-wrap
+				margin: 0 80px
+				.logo-header
+					height: 50px
+					width: auto	
+					margin-top: 5px		
+
+//toggle-menu
+.toggle-mnu 
+  display: block
+  width: 28px
+  height: 28px
+  float: left
+
+  span:after, span:before 
+    content: ""
+    position: absolute
+    left: 0
+    top: 9px
+
+  span:after
+    top: 18px
+
+  span 
+    position: relative
+    display: block
+
+  span, span:after, span:before
+    width: 100%
+    height: 2px
+    background-color: $light
+    transition: all 0.3s
+    backface-visibility: hidden
+    border-radius: 2px
+
+
+  &.on span 
+    background-color: transparent
+
+  &.on span:before 
+    transform: rotate(45deg) translate(-1px, 0px)
+
+  &.on span:after 
+    transform: rotate(-45deg) translate(6px, -7px)
+//end-toggle-menu	
+
+//mobile-menu
+.mobile-menu
+	padding: 10px 15px 5px 15px
+	color: $back
+	cursor: pointer
+	background-color: rgba($light, .70)
+	position: relati
+	z-index: 3
+	.toggle-mnu 
+		span:after, span:before
+			background-color: $light
+ b
+		display: block
+		margin-left: 40px
+		font-style: Italic
+
+.header-flex
+	display: flex
+	height: 100%
+	position: relative
+	top: 0
+.flex-center
+	margin: auto
+.flex-bottom
+	position: absolute
+	display: block
+	bottom: 0
+	width: 100%
+	height: 60px
+	background-image: url(../img/header-bottom.png)
+	background-position: center center
+	text-align: center
+	a
+		display: inline-block
+		color: $back
+		font-size: 14px
+		transition: color .25s ease
+		&:hover
+			color: $accent
+			i
+				color: $accent
+		p
 			display: inline-block
-			margin-top: 5px			
-	&-right		
+		i
+			padding-left: 10px
+			color: $back
+			font-size: 18px
+			color: #fff
+
+#my-menu.mm-menu
+	color: $green
+	background-color: lighten($accent, 20%)
+	.mm-navbar a
+		color: darken($green, 5%)
+		font-weight: bold
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	text-transform: uppercase
+	font-weight: bold
+	z-index: 10
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+@keyframes turning
+	0%
+		right: 600px
+		opacity: 0
+	100%
+		right: 0px
+		opacity: 1			
+.callback
+	color: #fff
+	position: relative
+	animation: turning 3.5s ease-out
+	padding: 15px
+	background-color: rgba($accent, .90)
+	border-radius: 5px
+	input, textarea, select,
+	.selectize-control.single .selectize-input.input-active, .selectize-input
+		background-color: transparent
+		border: rgba(0,0,0,.1) 1px solid
+		border-bottom: rgba(0,0,0,.1) 2px solid
+		border-radius: 2px		
+		color: #fff
+		width: 100%
+		margin-top: 17px
+		padding: 8px 22px
+		outline: 0
+		display: inline-block
+		font-weight: 300
+		font-size: 16px		
+	option
+		color: $default
+
+		&::-webkit-input-placeholder
+			color: #fff
+			opacity: 1
+		&:-moz-placeholder
+			color: #fff
+			opacity: 1
+		&::-moz-placeholder
+			color: #fff
+			opacity: 1
+		&:-ms-input-placeholder
+			color: #fff	
+	.formhead
+		margin-top: 0
+		line-height: 1.5
+		white-space: nowrap
+		margin-bottom: 0
+		font-size: 30px
+		text-transform: uppercase
+		font-weight: 800
+	p
+		margin: 0
+
+	.button
+		margin-top: 20px
+
+@keyframes leftturning
+	0%
+		left: 300px
+		opacity: 0
+	100%
+		left: 0px
+		opacity: 1
+@keyframes rightturning
+	0%
+		right: 300px
+		opacity: 0
+	100%
+		right: 0px
+		opacity: 1		
+.tagline
+	.h1
+		position: relative
+		margin-top: 30px
+		animation: leftturning 3s
+	.h2
+		position: relative
+		margin-top: 20px
+		font-style: italic
+		line-height: 1.4
+		animation: rightturning 3s	
+//section_1
+.courses
+	padding: 100px 0
+.course-wrap
+	padding: 5px
+	.course
+		overflow: hidden
+		padding: 10px
+		background-color: $gray
+		border-radius: 5px		
+		.left
+			float: left
+			width: 50%
+			overflow: hidden
+			border-radius: 5px 0 0 5px
+			img
+				max-width: 100%
+				-moz-transition: all 1s ease-out
+				-o-transition: all 1s ease-out
+				-webkit-transition: all 1s ease-out
+				&:hover
+					-webkit-transform: scale(1.2)
+					-moz-transform: scale(1.2)
+					-o-transform: scale(1.2)					
+
+		.right
+			float: right
+			width: 50%
+		&-text
+			padding: 20px
+			.h4
+				margin: 0
+			p
+				font-size: 14px
+				margin: 0
+//section_1_end
+
+//section_2(carousel)	
+.carousel-services
+	background-color: $back
+	&-item
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+	&-image
+		background-size: cover
+		background-position: center
+		position: relative
+		.descr
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: rgba($purple, 0.5)
+			//background-color: opacify($purple, .5)
+			text-align: center	
+			display: none
+			transition: all .25s		
+		&:hover
+			.descr
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				text-decoration: none
+				cursor: pointer
+				.descr-content
+					padding: 10px
+					border-radius: 50%
+					background-color: $back
+					img
+						width: 30px
+						height: 30px
+				.descr-text
+					color: $back
+					font-style: italic
+					margin-top: 10px								
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+
+//section_2_end
+
+//section_3(expert)
+.expert
+	.expert-content
+		overflow: hidden
+		padding:
+			top: 100px
+			bottom: 100px
+		.expert-content-text
+			padding-top: 30px
+			float: left
+			width: 50%
+			.h3
+				color: $accent
+			.h4
+				color: $green
+			.h3, .h4
+				margin: 0
+		.expert-content-img
+			float: right
+			width: 50%	
+			text-align: center
+			img
+				display: inline-block
+				width: 480px
+//owl-navs-settings
+.slideshow-experts
+	.owl-carousel
+		position: relative
+		.owl-nav
+			position: absolute
+			top: 250px
+			right: 43px
+			width: 500px
+			overflow: hidden
+			.owl-prev, .owl-next
+				width: 50px
+				height: 50px
+				text-align: center
+				background: $accent
+				border-radius: 50%
+				padding-top: 9px
+				&:hover
+					.fa
+						color: $default
+				.fa
+					font-size: 30px
+					color: green
+			.owl-prev
+				float: left
+			.owl-next
+				float: right
+//section_3_end
+
+//section_4
+.results
+	padding:
+		top : 100px
+		bottom: 60px
+	.results-item
+		text-align: center
+		color: $back		
+		display: block
+		margin-bottom: 40px
+		> span
+			display: block
+		&-text
+			font-family: "RalewayBold", sans-serif
+			font-size: 13px
+			line-height: 16px
+			
+
+	.img-wrap
+		padding-bottom: 32px
+		display: block
+		position: relative	
+		img
+			max-width: 60px
+			max-height: 50px
+//section_4_end
+
+//section_5
+.subscription
+	padding: 100px 0 80px 0
+.subs-item
+	background-color: $accent
+	color: $default
+	border-radius: 5px
+	text-align: center
+	margin-bottom: 20px
+	&-top
+		border-radius: 5px 5px 0 0
+		display: flex
 		flex-direction: row
-		justify-content: flex-start		
-		li
-			margin-right: 20px		
+		justify-content: center
+		align-items: center
+		background-color: $green
+		color: $back
+		font-family: "RalewayBold", sans-serif
+		padding: 10px 0
+		&-cur
+			font-size: 18px
+			margin-right: 5px
+		&-price
+			font-size: 32px
+			margin-right: 5px
+		&-period
+			font-size: 16px
+			margin-top: 15px
+	&-middle
+		display: block
+		p
+			position: relative
+			margin-bottom: 10px
+			font-weight: 600
+			&:nth-child(1), &:nth-child(2)
+				&::after
+					position: absolute
+					bottom: -8px
+					left: 50%
+					transform: translate(-50%,0)
+					content: ''
+					height: 1px
+					background-color: $back
+					width: 80px
+					display: inline-block
+			&:nth-child(3)				
+				margin-bottom: 0px
+	&-bottom
+		padding: 20px 0
+		.button
+			padding: 7px 15px
+			border-radius: 20px 20px 0 0 
+.owl-carousel.carousel-user
+	position: relative
+	.owl-nav
+		position: absolute
+		top: 30px
+		overflow: hidden
+		width: 100%
+		color: $green
+		font-size: 30px
+		.owl-prev, .owl-next
+			&:hover
+				color: $accent
+		.owl-prev
+			float: left
+		.owl-next
+			float: right			
+		i.fa-rocket.reverse
+			-moz-transform: rotateY(180deg);
+			-ms-transform: rotateY(180deg);
+			-webkit-transform: rotateY(180deg);
+			-o-transform: rotateY(180deg);
+			transform: rotateY(180deg);			
+//section_5_end
+//section_6
+.slideshow-reviews
+	padding-bottom: 70px
+	.section-head
+		margin: 0
+		.h3
+			margin: 0		
+.user
+	padding: 30px 20px
+	font-family: 'Times New Roman', serif
+	text-align: center
+	&-header
+		font-style: italic
+		font-size: 30px
+		font-weight: bold
+	&-date
+		font-style: italic
+		font-size: 14px
+		margin-top: 2px
+		color: $gray
+	&-stars
+		margin: 20px 0 20px
+		font-size: 14px
+		color: $accent
+		.fa
+			margin: 0 2px
+	&-text
+		color: $green
+		font-weight: 300	
+//section_6_end
+//footer_top
+.footer-top
+	padding: 50px 0
+	background-color: $purple
+	color: $back
+	font-size: 14px	
+.footer-socials
+	padding-right: 50px
+	&-ref
+		ul
+			padding-left: 0px
+			li
+				display: inline-block
+				margin-right: 10px
+				a
+					color: $back
+					font-size: 21px	
+					&:hover
+						color: $accent
+.footer-contacts.footer-email
+	margin-top: 90px
+.footer-contacts
+	.footer-contacts-wrap
+		margin-left: 30px
+		position: relative
+		p
+			margin: 0px		
+		.fa
+			position: absolute
+			left: -30px
+			top: 5px
+			font-size: 21px		
+.footer-contacts-tel
+	margin-top: 25px			
+.footer-contacts-web
+	margin-top: 50px
+//footer_top_end
+//footer_bottom
+.footer-bottom
+	font-size: 14px
+	text-align: center
+	padding: 30px 0
+	background-color: lighten($purple, 5%)
+	color: $back
+	font-weight: 600
+//footer_bottom_end
+
+
+#my-menu
+	z-index: 3
+.gbrighten
+	background-color: lighten($green, 5%)
+
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	background-color: #ef594b
+	z-index: 12
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	cursor: pointer
+	transition: all .3s ease
+	opacity: .5
+	&:hover
+		color: $accent
+		opacity: 1
+	&.active
+		right: 25px
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 100
+	background-color: $purple
+	.pulse
+		position: relative
+		left: 50%
+		top: 50vh
+		margin: 
+			left: -40px
+			right: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid $accent
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite		
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)		
+	100%
+		@include opacity(0)
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)	
+		transform: scale(1)							
+
 
 @import "media" // Всегда в конце

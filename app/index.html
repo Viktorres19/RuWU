@@ -18,48 +18,551 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#249aa6">
+	<meta name="theme-color" content="$back">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#249aa6">
+	<meta name="msapplication-navbutton-color" content="$back">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#249aa6">
+	<meta name="apple-mobile-web-app-status-bar-style" content="$back">
 
-	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #249aa6; }</style>
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: $back; }</style>
 
 </head>
 
 <body class="homepage">
 
-	<header class="site-header section-overlay" style="background-image: url(img/top-bg.jpg);">
-		<div class="top-line">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-5">
-						<ul class="main-menu-left">
-							<li>О нас</li>
-							<li>Курсы</li>
-							<li>Тренеры</li>
-						</ul>
-					</div>
-					<div class="col-sm-2">
-						<div class="main-menu-center">
-							<img src="img/logo.svg" alt="Run with us" class="logo-header">
+	<div class="preloader"><div class="pulse"></div></div>
+
+	<div id="my-page">
+    <div id="my-header">
+			<header class="site-header section-overlay" style="background-image: url(img/top-bg.jpg);">
+				<div class="mobile-menu hidden-md hidden-lg">
+					<a href="#" class="toggle-mnu hidden-lg hidden-md"><span></span></a><b>Опции нашего бегового клуба</b>
+				</div>													
+				<div class="top-line">
+					<div class="container">
+						<div class="row">
+
+							<nav class="desktop-menu">
+								<ul class="points-wrapper">
+									<li><a href="#about">О нас</a></li>
+									<li><a href="#locations">Локации</a></li>
+									<li><a href="#trainers">Тренеры</a></li>
+									<li>
+										<a href="#">
+											<span class="img-wrap">
+												<img class="logo-header" src="img/logo.svg" alt="RunWithUs">
+											</span>
+										</a>
+									</li>
+									<li><a href="#blog">Блог</a></li>
+									<li><a href="#planes">Курсы</a></li>
+									<li><a href="#reviews">Отзывы</a></li>
+								</ul>
+							</nav>
 						</div>
 					</div>
-					<div class="col-sm-5">
-						<ul class="main-menu-right">
-							<li>Блог</li>
-							<li>Локации</li>
-							<li>Магазин</li>							
-						</ul>
+				</div>
+				<div class="header-flex">
+					<div class="flex-center">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-offset-1 col-md-10 col-sm-12">
+									<div class="row">
+										<div class="col-md-offset-1 col-md-5 col-sm-6">
+											<form class="callback">
+												
+												<div class="success"><span>Спасибо за заявку!</span></div>
+
+												<!-- Hidden Required Fields -->
+												<input type="hidden" name="project_name" value="RuWU">
+												<input type="hidden" name="admin_email" value="viktoralwaysfirst@gmail.com">
+												<input type="hidden" name="form_subject" value="Заявка с сайта RuWU">
+												<!-- END Hidden Required Fields -->				
+
+												<div class="formhead h2">Оставить заявку</div>
+												<p>Оставьте заявку и мы перезвоним вам в течение 15 минут.</p>
+
+												<input type="text" name="Имя" placeholder="Ваше имя..." pattern="[а-яА-Я,a-zA-Z]+" required>
+												<input type="tel" id="tel" name="tel" pattern="([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Ваш телефон... (___)___-__-__" required>
+												<select name="Ваше предпочтение">
+													<option disabled selected value>Выберите вид...</option>
+													<option>Спринт</option>
+													<option>Средние дистанции</option>
+													<option>Длинные дистанции</option>
+													<option>Барьерный бег</option>
+													<option>Бег по пересечённой</option>
+												</select>
+												<button class="button">Отправить</button>								
+											</form>											
+										</div>
+										<div class="col-sm-offset-1 col-sm-5">
+											<div class="tagline">
+												<div class="h1">Бегайте с нами</div>
+												<div class="h2">Мы будем рады нашей скорой встрече</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flex-bottom">
+						<a href="#about"><p>Узнать больше</p><span><i class="fa fa-arrow-circle-o-down"></i></span></a>
+					</div>
+				</div>
+
+
+			</header>    	
+    </div>
+
+    <div id="my-content">
+    	<section id="about" class="courses section-light">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-10 col-sm-offset-1">
+							<div class="section-head">			
+								<h3 class="h3">Наши тренировочные комплексы помогут Вам</h3>
+								<p>Развить множество навыков и использовать всю широту возможностей</p>
+							</div>							
+						</div>	
+					</div>
+				</div>
+				<div class="section-pb">
+					<div class="container">
+						<div class="row">
+							<div class="course-wrap col-sm-6">
+								<div class="course">
+									<div class="course-icon img-wrap left"><img src="img/courses/cs_1.jpg" alt="Курсы"></div>
+									<div class="course-text right">
+										<h4 class="h4">Залог здоровья</h4>
+										<p>Мы поможем Вам планомерно выйти из болота нетренированности на комфортный уровень подготовки.</p>
+									</div>
+								</div>											
+							</div>
+							<div class="course-wrap col-sm-6">
+								<div class="course">
+									<div class="course-icon img-wrap left"><img src="img/courses/cs_2.jpg" alt="Курсы"></div>
+									<div class="course-text right">
+										<h4 class="h4">Комфорт и стиль</h4>
+										<p>Научим вас подбирать оптимальную экипировку для тренировочных процессов любой сложности для всех этапов.</p>
+									</div>
+								</div>											
+							</div>	
+							<div class="course-wrap col-sm-6">
+								<div class="course">
+									<div class="course-icon img-wrap left"><img src="img/courses/cs_3.jpg" alt="Курсы"></div>
+									<div class="course-text right">
+										<h4 class="h4">Режим и удобство</h4>
+										<p>Вы приобретёте любовь к размеренным регулярным тренировкам, ярко украшающим жизнь.</p>
+									</div>
+								</div>											
+							</div>	
+							<div class="course-wrap col-sm-6">
+								<div class="course">
+									<div class="course-icon img-wrap left"><img src="img/courses/cs_4.jpg" alt="Курсы"></div>
+									<div class="course-text right">
+										<h4 class="h4">Максимум</h4>
+										<p>Никто изначально не знает свой скоростной максимум. Мы поможем узнать ваш скоростной порог и даже повысить его.</p>
+									</div>	
+								</div>											
+							</div>																																											
+						</div>
+					</div>
+				</div>
+    	</section>
+    	<section id="locations" class="s-services">
+    		<div class="owl-carousel carousel-services">
+    			<div class="carousel-services-item">
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_1.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_2.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>    				
+    			</div>
+    			<div class="carousel-services-item">
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_3.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_4.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>    				
+    			</div>
+    			<div class="carousel-services-item">
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_5.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_6.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>    				
+    			</div>
+    			<div class="carousel-services-item">
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_7.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_8.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>    				
+    			</div>
+    			<div class="carousel-services-item">
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_9.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>
+    				<div class="carousel-services-image">
+    					<img src="img/slider/slide_10.jpg" alt="Сервисы">
+    					<a href="#" class="descr">
+    						<div class="descr-content">
+    							<img src="img/glass.svg" alt="Coming please!">
+    						</div>
+    						<div class="descr-text">Welcome!</div>
+    					</a>
+    				</div>    				
+    			</div>
+    		</div>
+    	</section>     	
+    	<section id="trainers" class="slideshow-experts section-light">
+    		<div class="container">
+    			<div class="row">
+						<div class="owl-carousel">
+						  <div class="expert">
+						  	<div class="expert-content">
+						  		<div class="expert-content-text">
+						  			<h3 class="h3">Мария Шевченко</h3>
+						  			<h4 class="h4">Эксперт по бегу</h4>
+						  			<p>Придя работать в наш тренировочный центр, я с первых дней почувствовала удовольствие от управления тренировочным процессом. Взаимодействие чувствуется на всех этапах и со спортсменами различных уровней подготовки.</p>
+						  		</div>
+						  		<div class="expert-content-img">
+						  			<img src="img/experts/exp_1.jpg" alt="Тренер">
+						  		</div>						  		
+						  	</div>
+						  </div>
+						  <div class="expert">
+						  	<div class="expert-content">
+						  		<div class="expert-content-text">
+						  			<h3 class="h3">Дмитрий Иванов</h3>
+						  			<h4 class="h4">Эксперт по фитнесу</h4>
+						  			<p>В нашем центре всем спортсменам доносится изначальная важность взаимодействия беговых упражнений с различными 
+						  			силовыми нагрузками. Этот симбиоз даёт наилучшие результаты в росте и поддержании формы атлетов.</p>
+						  		</div>
+						  		<div class="expert-content-img">
+						  			<img src="img/experts/exp_2.jpg" alt="Тренер">
+						  		</div>
+						  	</div>
+						  </div>
+						  <div class="expert">
+						  	<div class="expert-content">
+						  		<div class="expert-content-text">
+						  			<h3 class="h3">Алевтина Туманская</h3>
+						  			<h4 class="h4">Руководитель группы восстановления</h4>
+						  			<p>Мы следим за физиологическими показателями всех наших спортсменов, чтобы предупредить различные неприятные последствия
+						  			тренировочного процесса. Сбалансированное питание, интересные лекции и гимнастика помогают нашим атлетам становиться лучше физически и морально.</p>
+						  		</div>
+						  		<div class="expert-content-img">
+						  			<img src="img/experts/exp_3.jpg" alt="Тренер">
+						  		</div>
+						  	</div>
+						  </div>
+						</div>
+    			</div>
+    		</div>
+    	</section>   	
+    	<section id="blog" class="results section-overlay" style="background-image: url(img/results-bg.jpg);">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_1.svg" alt="pic_1">
+								</span>
+								<span class="results-item-text">Придя в наш клуб</span>
+							</a>    					
+    				</div>
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_2.svg" alt="pic_2">
+								</span>
+								<span class="results-item-text">Вы получите большой выбор</span>
+							</a>    					
+    				</div>
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_3.svg" alt="pic_3">
+								</span>
+								<span class="results-item-text">Разминка станет каждодневным удовольствием</span>
+							</a>    					
+    				</div>
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_4.svg" alt="pic_4">
+								</span>
+								<span class="results-item-text">Тренажеры накачают нижнюю</span>
+							</a>    					
+    				</div>
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_5.svg" alt="pic_5">
+								</span>
+								<span class="results-item-text">И верхнюю часть вашего тела</span>
+							</a>    					
+    				</div>
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_6.svg" alt="pic_6">
+								</span>
+								<span class="results-item-text">Мы будем в постоянной связке</span>
+							</a>    					
+    				</div>
+    				<div class=" col-md-offset-0 col-md-3 col-sm-offset-2 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_7.svg" alt="pic_7">
+								</span>
+								<span class="results-item-text">И вы почувствуете результат</span>
+							</a>    					
+    				</div>
+    				<div class="col-md-3 col-sm-4 col-xs-6">
+							<a class="results-item">
+								<span class="img-wrap">
+									<img src="img/results/res_8.svg" alt="pic_8">
+								</span>
+								<span class="results-item-text">Удовольствие, удовлетворенность и умиротворённость</span>
+							</a>    					
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<section id="planes" class="subscription section-light">
+    		<div class="container">
+    			<div class="row">    		
+						<div class="section-head">			
+							<h3 class="h3">Наши абонементы</h3>
+						</div> 
+					</div>
+				</div>   		
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-sm-4 col-xs-12">
+    					<div class="subs-item">
+    						<div class="subs-item-top left">
+    							<div class="subs-item-top-cur">$</div>
+    							<div class="subs-item-top-price">30</div>
+    							<div class="subs-item-top-period">/месяц</div>
+    						</div>
+    						<div class="subs-item-middle">
+    							<p>Бег и тренажеры</p>
+    							<p>Личный тренер: нет</p>
+    							<p>Консультации специалистов</p>
+    						</div>
+    						<div class="subs-item-bottom">
+    							<button class="button left">Приобрести</button>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="col-sm-4 col-xs-12">
+    					<div class="subs-item">
+    						<div class="subs-item-top center">
+    							<div class="subs-item-top-cur">$</div>
+    							<div class="subs-item-top-price">50</div>
+    							<div class="subs-item-top-period">/месяц</div>  							
+    						</div>
+    						<div class="subs-item-middle">
+    							<p>Бег и тренажеры</p>
+    							<p>Личный тренер: да</p>
+    							<p>Консультации специалистов</p>
+    						</div>
+    						<div class="subs-item-bottom">  
+									<button class="button center">Приобрести</button>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="col-sm-4 col-xs-12">
+    					<div class="subs-item">
+    						<div class="subs-item-top right">
+    							<div class="subs-item-top-cur">$</div>
+    							<div class="subs-item-top-price">80</div>
+    							<div class="subs-item-top-period">/месяц</div>    							
+    						</div>
+    						<div class="subs-item-middle">
+    							<p>Бег и тренажеры</p>
+    							<p>Личный тренер: да</p>
+    							<p>Постоянная поддержка</p>
+    						</div>
+    						<div class="subs-item-bottom">
+    							<button class="button right">Приобрести</button>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+
+    	<section id="reviews" class="slideshow-reviews section-light">
+    		<div class="container">
+    			<div class="row">    		
+						<div class="section-head">			
+							<h3 class="h3">Отзывы наших спортсменов</h3>
+						</div> 
+					</div>
+				</div>       		
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-sm-8 col-sm-offset-2">
+							<div class="owl-carousel carousel-user">
+							  <div class="user">
+									<div class="user-header">Артемио</div>
+									<div class="user-date">Спринтер</div>
+									<div class="user-stars">
+										<i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i>
+									</div>
+									<div class="user-text">За три года плотной работы с тренерской командой центра я приобрёл новые познания, позволившие мне преобразовать мою технику и выйти на новый уровень.</div>
+							  </div>
+							  <div class="user">
+									<div class="user-header">Тиара</div>
+									<div class="user-date">Барьерист</div>
+									<div class="user-stars">
+										<i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i>
+									</div>
+									<div class="user-text">Занимаясь в центре по индивидуальной программе, я решила вовсе сменить беговую дисциплину. Это нелёгкое решение далось мне не без участия моего тренера. Я полностью довольна новым направлением. Результаты стабильно растут.</div>
+							  </div>
+							  <div class="user">
+									<div class="user-header">Костадин</div>
+									<div class="user-date">Марафонец</div>
+									<div class="user-stars">
+										<i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i><i class="fa fa-thumbs-o-up"></i>
+									</div>
+									<div class="user-text">Меняеются времена, меняются возможности, но я чувствую, что вселенная предоставила мне новый шанс. Перейдя на новую, более длинную дистанцию, я переживаю вторую молодость и невероятный прилив энергии.</div>
+							  </div>								
+							</div>					  						  
+						</div>
+    			</div>
+    		</div>
+    	</section> 				  
+    </div>
+		<div id="my-footer">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-push-6">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="footer-contacts">
+										<h5 class="h5">Контакты</h5>
+										<div class="footer-contacts-wrap footer-contacts-adr">
+											<i class="fa fa-map-marker"></i>
+											<p>Долина атрибутики, д12</p>
+											<p>г. Залес-Переславский</p>
+										</div>
+										<div class="footer-contacts-wrap footer-contacts-tel">
+											<i class="fa fa-phone"></i>
+											<p>+123-826-35-487-77</p>
+											<p>+123-123-12-123-23</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="footer-contacts footer-email">
+										<div class="footer-contacts-wrap footer-contacts-mail">
+											<i class="fa fa-envelope-o"></i>
+											<p>ruwu.info@example.com</p>
+										</div>
+										<div class="footer-contacts-wrap footer-contacts-web">
+											<i class="fa fa-globe"></i>
+											<p>ruwu.example.com</p>
+										</div>													
+									</div>
+								</div>
+							</div>
+						</div>									
+						<div class="col-md-6 col-md-pull-6">
+							<div class="footer-socials">
+								<h5 class="h5">О нас</h5>
+								<p>Мы стабильно развивающаяся компания в области физкультуры и спорта. Мы гордимся нашими тренерами и клиентами. 
+								Современное оборудование и людской опыт позволяет стабильно достигать высоких резултатов и делает спорт безопасным удовольствием.</p>
+								<nav class="footer-socials-ref">
+									<ul>
+										<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+										<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="header-flex">
-		</div>
-	</header>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						Copyright &copy; 2018 Viktorres
+					</div>
+				</div>
+			</div>							
+		</div>    			
+	</div>
 
+
+	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
 	
 	<link rel="stylesheet" href="css/main.min.css">
 	<script src="js/scripts.min.js"></script>

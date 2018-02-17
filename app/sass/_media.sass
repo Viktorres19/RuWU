@@ -4,22 +4,107 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	/**/
+	.slideshow-experts 
+		.owl-carousel 
+			.owl-nav
+				right: -8px
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.top-line
+		display: none
+
+	.logo-header
+		height: 40px
+
+	.flex-bottom
+		display: none
+
+	body
+		&.homepage
+			.site-header
+				min-height: 550px
+	.courses, .subscription
+		padding: 30px 0
+	.expert
+		.expert-content
+			padding: 50px 0
+	.slideshow-reviews
+		padding-bottom: 0
+
+	.slideshow-experts 
+		.owl-carousel 
+			.owl-nav
+				display: none
+.expert 
+	.expert-content 
+		.expert-content-img 
+			img
+				width: 100%
+		.expert-content-text
+			padding-right: 10px		
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+	.callback
+		margin: 0 20px
+	.tagline .h1 
+	    margin-top: 0px
+	    font-size: 26px
+	.tagline .h2
+	    margin-top: 0px
+	    font-size: 18px
+	.expert 
+		.expert-content 
+			.expert-content-text, .expert-content-img
+				width: 100%
+				float: none
+				text-align: center
+	.subs-item
+		margin:
+			left: 20px
+			right: 20px
+		p:nth-child(1)::after, p:nth-child(2)::after
+			width: 100%
+
+	.owl-carousel.carousel-user 
+		.owl-nav
+			display: none 
+	
+	.footer-top
+		padding: 20px 0
+
+	.footer-contacts
+		border-bottom: 1px solid $back
+		padding-bottom: 10px
+		.h5
+			margin-bottom: 5px
+	.footer-contacts-tel
+		margin-top: 5px
+
+	.footer-contacts-web, .footer-contacts.footer-email
+		margin-top: 20px
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.callback .formhead
+		white-space: normal
+
+	body
+		&.homepage
+			.site-header
+				min-height: 600px		
+
+	.course-wrap 
+		.course 
+			.left, .right
+				img
+					width: 100%
+				width: 100%
+				float: none
 
 
 /* Custom, iPhone Retina */

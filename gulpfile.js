@@ -28,7 +28,10 @@ gulp.task('common-js', function() {
 gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/modernizr/modernizr.js',		
 		'app/libs/mmenu/js/jquery.mmenu.all.min.js',
+		'app/libs/equalHeights/equalheights.js',
+		'app/libs/owl.carousel/owl.carousel.min.js',			
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -76,6 +79,7 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 	var buildFiles = gulp.src([
 		'app/*.html',
 		'app/.htaccess',
+		'app/*.php',
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
