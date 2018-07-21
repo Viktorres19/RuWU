@@ -1,4 +1,4 @@
-This project is for sale. My design and could.
+This project is for sale. My design and code.
 
 To run the project folloowing steps should be done:
 1. after unpacking or clonning repository, inside project folder run the command 'npm install'
