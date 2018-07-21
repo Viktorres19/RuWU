@@ -1,4 +1,4 @@
-Test project for Time Is Money company.
+This project is for sale. My design and could.
 
 To run the project folloowing steps should be done:
 1. after unpacking or clonning repository, inside project folder run the command 'npm install'
